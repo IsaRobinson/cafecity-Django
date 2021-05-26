@@ -1,0 +1,39 @@
+.iconos-footer {
+    height: 40%;
+    text-align: center;
+}
+
+.fa {
+    padding: 20px 0px;
+    font-size: 25px;
+    width: 50px;
+    text-align: center;
+    color: #613217;
+    text-decoration: none;
+}
+
+.fa:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contacto-footer {
+    height: 60%;
+    text-align: center;
+    color: #613217;
+    font-weight: bolder;
+}
+
+#contacto {
+    text-decoration: none;
+    color: #613217;
+}
+
+#contacto:hover {
+    color: #ffffff;
+}
+
+.footer {
+    background-color: #eccaaa;
+    height: 20vh;
+}

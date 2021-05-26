@@ -1,0 +1,52 @@
+ body {
+     margin: 0;
+     overflow-x: hidden;
+     box-sizing: border-box;
+ }
+ 
+ .negrita {
+     font-weight: bold;
+ }
+ 
+ #cafe {
+     float: right;
+ }
+ 
+ .center {
+     text-align: center;
+ }
+ 
+ .alto {
+     height: 100vh;
+ }
+ 
+ .nosotros {
+     background-color: #f2e3d5;
+ }
+ 
+ .flex-container {
+     display: flex;
+     flex-wrap: wrap;
+     font-size: 20px;
+     text-align: center;
+     background-color: #613217;
+ }
+ 
+ .flex-item-left {
+     padding: 10px;
+     flex: 50%;
+     color: white;
+ }
+ 
+ .flex-item-right {
+     padding: 10px;
+     flex: 50%;
+     color: white;
+ }
+ 
+ @media (max-width: 800px) {
+     .flex-item-right,
+     .flex-item-left {
+         flex: 100%;
+     }
+ }

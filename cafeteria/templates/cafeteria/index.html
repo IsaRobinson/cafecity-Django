@@ -1,0 +1,165 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaféCity</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="{% static 'cafeteria/css/styleIndex.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'cafeteria/css/styleNavigation.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'cafeteria/css/styleFooter.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <section>
+        <nav>
+            <div class="logoMenu">
+                <h4>CafeCity</h4>
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a id="active" href="{% url 'inicio' %}">Inicio</a></li>
+                <li>
+                    <a href="{% url 'carta' %}">Carta</a></li>
+                <li>
+                    <a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li>
+                    <a href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </section>
+    <section id="section1">
+        <div class="parallax">
+            <div class="img1" id="imagen1">
+                <h1>BIENVENIDOS A</h1>
+                <H2>CaféCity</H2>
+
+            </div>
+        </div>
+    </section>
+    <section id="section2">
+        <div class="parallax2">
+            <div class="img2" id="imagen2">
+                <h1 class="texto">LA PRIMERA CAFETERÍA <br><br> de especialidad en Casablanca.</h1>
+
+            </div>
+        </div>
+    </section>
+
+    <!--<section id="section3">
+        <div class="seccion-texto">
+            <p>Variedades de cafés</p>
+        </div>
+        <div class="responsivo">
+            <div class="img">
+                <img src="img/capuccino.jpg" alt="">
+                <div>
+                    <div class="div-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam itaque voluptatibus commodi aspernatur! Officia pariatur in, natus fugit sunt laboriosam provident ducimus impedit labore quibusdam quasi sapiente corporis itaque.</div>
+                </div>
+            </div>
+            <div class="img">
+                <img src="img/coffee_3.jpg" alt="">
+                <div>
+                    <div class="div-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam itaque voluptatibus commodi aspernatur! Officia pariatur in, natus fugit sunt laboriosam provident ducimus impedit labore quibusdam quasi sapiente corporis itaque.</div>
+                </div>
+            </div>
+            <div class="img">
+                <img src="img/carta-imagenes-42.jpg" alt="">
+                <div>
+                    <div class="div-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veniam itaque voluptatibus commodi aspernatur! Officia pariatur in, natus fugit sunt laboriosam provident ducimus impedit labore quibusdam quasi sapiente corporis itaque.</div>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <section id="section5">
+        <div>
+            <p class="seccion-texto">Ultimas Publicaciones</p>
+        </div>
+        <div id="instafeed-container"></div>
+    </section>
+    <section id="section4">
+        <div id="titulo4">
+            <p class="titulo4">Nuestro Local</p>
+        </div>
+        <div id="contenedor-slider" class="contenedor-slider">
+            <div id="slider" class="slider">
+                <section class="slider__section"><img id="local1" src="{% static 'cafeteria/img/local1.jpg' %}"></section>
+                <section class="slider__section"><img id="local2" src="{% static 'cafeteria/img/local5.jpg' %}"></section>
+                <section class="slider__section"><img id="local3" src="{% static 'cafeteria/img/local3.jpg' %}"></section>
+                <section class="slider__section"><img id="local4" src="{% static 'cafeteria/img/local4.jpg' %}"></section>
+            </div>
+            <div id="btn-prev" class="btn-prev">&#60;</div>
+            <div id="btn-next" class="btn-next">&#62;</div>
+        </div>
+    </section>
+    <section id="section3">
+        <div class="seccion-texto">
+            <p>Variedades de cafés</p>
+        </div>
+        <div class="responsivo">
+            <div class="img">
+                <img src="{% static 'cafeteria/img/Mocaccino.jpg' %}" alt="">
+                <div>
+                    <div class="div-text">
+                        <p style="text-align: center; font-weight: bold;">Mocaccino</p>
+                        <p>Delicioso e intenso chocolate, espresso y leche cremosa, coronado con crema batida. Irresistible para los días fríos</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img">
+                <img src="{% static 'cafeteria/img/coffee_3.jpg' %}" alt="">
+                <div>
+                    <div class="div-text">
+                        <p style="text-align: center; font-weight: bold;">Capuccino</p>
+                        <p>El balance perfecto. Nuestra carga de espresso acompañada con abundante espuma de leche</p>
+                    </div>
+                </div>
+            </div>
+            <div class="img">
+                <img src="{% static 'cafeteria/img/Frappuccino.jpg' %}" alt="">
+                <div>
+                    <div class="div-text">
+                        <p style="text-align: center; font-weight: bold;">Frappuccino</p>
+                        <p>Delicioso mocha batido con hielo y una intensa base de café, decorado con crema batida y topping de mocha</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="iconos-footer">
+            <a href="https://web.facebook.com/CAF%C3%89CITY_Specialty-Coffee-113657210817363/?__tn__=-UC*F" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/cafecity_specialtycoffee/" class="fa fa-instagram"></a>
+            <a href="https://web.whatsapp.com/" class="fa fa-whatsapp"></a>
+
+        </div>
+        <div class="contacto-footer">
+            <a id="contacto" href="contacto.html">Contactanos</a>
+
+            <p>(569) 9190 7690 </p>
+        </div>
+
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="https://cdn.jsdelivr.net/gh/stevenschobert/instafeed.js@2.0.0rc1/src/instafeed.min.js"></script>
+    <script src="{% static 'cafeteria/js/script.js' %}"></script>
+    <script src="{% static 'cafeteria/js/animacionMenu.js' %}"></script>
+
+</body>
+
+</html>

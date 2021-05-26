@@ -1,0 +1,151 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet"> -->
+    <link type="text/css" rel="stylesheet" href="{% static 'cafeteria/css/styleContacto.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'cafeteria/css/styleNavigation.css' %}">
+    <link type="text/css" rel="stylesheet" href="{% static 'cafeteria/css/styleFooter.css' %}">
+</head>
+
+<body>
+    <!-- Menu -->
+    <section>
+        <nav>
+            <div class="logoMenu">
+                <h4>CafeCity</h4>
+            </div>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="{% url 'inicio' %}">Inicio</a></li>
+                <li>
+                    <a href="{% url 'carta' %}">Carta</a></li>
+                <li>
+                    <a href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li>
+                    <a id="active" href="{% url 'contacto' %}">Contacto</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Ubicacion y cotactos -->
+    <section id="sec1">
+        <div class="container">
+            <div class="row">
+                <div class="col algo">
+                    <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.87251136130857!2d-71.40763532654886!3d-33.32212462599639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96626fb54e19cb7b%3A0xe2214c4ab221e710!2sCAF%C3%89CITY_Specialty%20Coffee!5e0!3m2!1ses!2scl!4v1619705932923!5m2!1ses!2scl"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+
+                </div>
+
+                <div class="col algo">
+                    <h2>Encuentranos en: </h2>
+                    <h3>
+                        <strong>Direccion</strong>
+                        <br> Avenida Diego Portales 351
+                        <br> local 5
+                        <br> Casablanca, Valparaíso
+                    </h3>
+
+                    <h3>
+                        <br>
+                        <strong>Teléfono</strong>
+                        <br> (569) 9190 7690
+                    </h3>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Formulario -->
+    <section id="sec2">
+        <article class="flex-container">
+            <h1 id="sugerencias">Mandanos tus sugerencias!</h1>
+        </article>
+
+        <section>
+            <form action="enviar.php" method="POST" enctype="text/plain" class="was-validated" id="formulario">
+                <div class="form-group">
+                    <label for="uname">Nombre:</label>
+                    <input type="text" class="form-control" id="uname" placeholder="Ingrese su nombre" name="uname" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback"> ingrese su nombre.</div>
+
+
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Ingrese su Email" name="uname" required>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">email invalido</div>
+
+                </div>
+                <div class="form-group">
+                    <textarea name="comentarios" rows="10" placeholder="Escribe aquí tus comentarios" class="form-control" id="comentarios" required></textarea>
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">ingrese respuesta.</div>
+
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="botan" onclick=" return enviarformulario()">Enviar</button>
+                <div id="error"></div>
+
+            </form>
+
+        </section>
+    </section>
+    <section class="footer">
+        <div class="iconos-footer">
+            <a href="https://web.facebook.com/CAF%C3%89CITY_Specialty-Coffee-113657210817363/?__tn__=-UC*F" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/cafecity_specialtycoffee/" class="fa fa-instagram"></a>
+            <a href="https://web.whatsapp.com/" class="fa fa-whatsapp"></a>
+
+        </div>
+        <div class="contacto-footer">
+            <a id="contacto" href="contacto.html">Contactanos</a>
+
+            <p>(569) 9190 7690 </p>
+        </div>
+
+    </section>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+    <script src="Scripts/jquery-1.5.2.js" type="text/javascript"></script>
+
+    <script src="{% static 'cafeteria/js/formulario.js' %}"></script>
+
+    <!-- Script Menu -->
+    <script src="{% static 'cafeteria/js/animacionMenu.js' %}"></script>
+
+
+
+</body>
+
+</html>
