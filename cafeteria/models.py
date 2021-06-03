@@ -6,7 +6,7 @@ class Categoria(models.Model):
     nombreCategoria = models.CharField(max_length=50,verbose_name='Nombre Categoría')
 
     def __str__(self):
-        return self.nombreCategoria
+        return  self.nombreCategoria
 
 
 class TipoAlimento(models.Model):
@@ -26,3 +26,13 @@ class Alimento(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+class postulacionConcurso(models.Model):
+    idPostulacion = models.AutoField(primary_key=True,verbose_name='Id Postulacion')
+    nombreAlimento = models.CharField(max_length=50,verbose_name='Alimento')
+    descripcionAlimento = models.CharField(max_length=100,verbose_name='Descripcion Alimento')
+    precioAlimento = models.IntegerField(verbose_name='Precio')    
+
+    def __str__(self):
+        return self.nombreAlimento
