@@ -1,0 +1,78 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Administrador</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <section>
+        <div style="background-color: #613217;">
+
+            <table style="color: #ffffff">
+                <h3 style="color: #ffffff;border-top: 3px solid;border-left: 3px solid;border-right: 3px solid;padding-top:10px;margin-bottom: 0;">Menu del día</h3>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Precio</th>
+                    <th>Categoría</th>
+                    <th scope="col">Modificar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+                {% for a in alimentos%}
+                <tr>
+                    <td>{{a.nombre}}</td>
+                    <td>{{a.descripcion}}</td>
+                    <td>${{a.precio}}</td>
+                    <td>{{a.categoria}}</td>
+                    <td><a href="{%url 'admin_mod_alimento' a.idAlimento %}">Modificar</a></td>
+                    <td><a href="{%url 'admin_del_alimento' a.idAlimento %}">Eliminar</a></td>
+                </tr>
+                {% endfor %}
+            </table>
+            <br>
+        </div>
+
+        <style>
+            table th {
+                padding-right: 100px;
+                padding-left: 100px;
+                border: 3px solid;
+            }
+            
+            td {
+                border: 3px solid;
+            }
+        </style>
+    </section>
+
+
+
+
+
+
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+</body>
+
+</html>
