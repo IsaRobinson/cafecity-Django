@@ -67,6 +67,14 @@
                         <strong>Teléfono</strong>
                         <br> (569) 9190 7690
                     </h3>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div style="text-align: right; margin:0 250px 15vh 0;">
+                        <button onclick="" type="submit" style="transition: 0.3s ease;background: #F2E3D5;color: #592C12;border-radius: 10px; height: 40px;font-weight: bolder; width: 200px;">
+                            <a style="color: #592C12;" href="{% url 'administrador' %}">Administrar</a></button>
+                    </div>
 
                 </div>
             </div>
@@ -113,7 +121,7 @@
     <section id="sec3">
         <article class="flex-container">
             <h1 id="sugerencias">Participa en nuestro concurso!</h1>
-            <h3>Tu receta podria ser parte de nuestro menú!!!</h3>
+            <h3 id="parrafo-concurso">Tu receta podria ser parte de nuestro menú!!!</h3>
         </article>
         <section>
 
@@ -159,7 +167,7 @@
 
             <p>(569) 9190 7690 </p>
 
-            <a id="contacto" href="{% url 'administrador' %}">Administrador</a>
+
 
         </div>
 
@@ -234,7 +242,7 @@
         margin-left: 270px;
     }
     
-    h3 {
+    #parrafo-concurso {
         text-align: center;
     }
     

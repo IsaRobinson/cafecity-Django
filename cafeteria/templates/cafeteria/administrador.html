@@ -12,14 +12,14 @@
 
 </head>
 
-<body style="background-image: url(logonegro.jpg);height: 100vh;width: 100%;background-size:cover;background-position-y: -90vh;">
+<body style="background-image: url('/cafeteria/templates/cafeteria/logonegro.jpg');height: 100vh;width: 100%;background-size:cover;background-position-y: -90vh;">
     <div style="text-align: right; margin:0 0 15vh 0;">
-        <button onclick="" type="button" style="transition: 0.3s ease;background: #613217;color: #ffffff;border-radius: 10px; height: 40px;font-weight: bolder;">Volver a la Página</button>
+        <button onclick="" type="submit" style="transition: 0.3s ease;background: #613217;color: #ffffff;border-radius: 10px; height: 40px;"><a style="font-weight: bolder;color: #ffffff;" href="{% url 'inicio' %}">Volver a la Página</a></button>
     </div>
 
-    <div style=" margin-top: 40vh;padding-right: 7%; ">
-        <table style=" color:#ffffff;table-layout: fixed;width: 100%;border-collapse: collapse; ">
-            <h3 style="color: #ffffff;border-top: 3px solid;border-left: 3px solid;border-right: 3px solid;padding-top:10px;margin-bottom: 0;margin-right: 215px; ">Menu del día</h3>
+    <div style=" margin-top: 20vh;padding-right: 7%; ">
+        <table style=" color:#613217;table-layout: fixed;width: 100%;border-collapse: collapse; ">
+            <h3 style="color: #613217;border-top: 3px solid;border-left: 3px solid;border-right: 3px solid;padding-top:10px;margin-bottom: 0;margin-right: 215px; ">Menu del día</h3>
             <tr>
                 <th>Nombre</th>
                 <th>Descripcion</th>
