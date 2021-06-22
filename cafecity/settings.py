@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cafeteria',
     'rest_cafeteria',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
