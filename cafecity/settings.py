@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cafeteria',
+    'rest_cafeteria',
+    'rest_framework',
+    
 ]
 
 MIDDLEWARE = [
@@ -75,12 +78,30 @@ WSGI_APPLICATION = 'cafecity.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
 
+	'default': {
+
+	    'ENGINE': 'django.db.backends.oracle',
+
+	    'NAME': '127.0.0.1:1521/XEPDB1',
+
+	    'USER':'PRUEBA_CAFECITY',
+
+	    'PASSWORD': 'admin',
+
+	    'TEST':{
+
+	        'USER':'default_test',
+
+	        'TBLSPACE':'default_test_tbls',
+
+	        'TBLSPACE_TMP':'default_test_tbls_tmp',
+
+	    },
+
+	}
+
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

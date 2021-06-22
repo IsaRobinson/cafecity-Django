@@ -1,0 +1,73 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body style="height: 100vh;width: 100%;background-size:cover;background-position-y: -90vh;">
+    <div style="text-align: right; margin:0 0 15vh 0;">
+        <button class="efecto" onclick="" type="submit" style="transition: 0.3s ease;background: #613217;color: #ffffff;border-radius: 10px; height: 40px;width: 80px;font-weight: bolder;"><a style="color: #ffffff;" href="{% url 'administrador' %}">Volver</a></button>
+    </div>
+    <form method="post" action="" id="formulario" style="margin-top: 40vh;width: 100%;text-align: center; margin-left: 0;">
+
+        {% csrf_token %}
+
+
+
+        <div class="form_group">
+
+            {{ form.as_table }}
+
+
+
+        </div>
+
+        <input type="submit" class="btn btn-concurso btn-danger" id="enviar" value="Modificar" style="background-color: #613217; border: #f2e3d5;color: #f2e3d5;font-weight: bold;">
+
+        <input type="reset" class="btn btn-concurso btn-primary" value="Limpiar" style="background-color: red; border: red;color: white;font-weight: bold;">
+
+        <div id="error" class="alert alert-success" role="alert">
+
+            {{ mensaje }}
+
+        </div>
+
+
+    </form>
+
+
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js "></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
+</body>
+
+</html>
+<style>
+    body {
+        background-color: #f2e3d5;
+    }
+    
+    #error {
+        background-color: #eccaaa;
+        border: 0;
+        color: #613217;
+    }
+</style>
