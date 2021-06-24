@@ -45,3 +45,44 @@ def lista_alimentos(request):
         else:
 
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET','PUT','DELETE'])
+def detalle_alimentos(request,id):
+
+    try:
+
+        alimento = Alimento.objects.get(idAlimento=id)
+
+    except Alimento.DoesNotExist:
+
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+
+    if request.method == 'GET':
+
+        serializer = AlimentosSerializer(alimento)
+
+        return Response(serializer.data)
+
+    if request.method == 'PUT':
+
+        data = JSONParser().parse(request)
+
+        serializer = AlimentosSerializer(alimento,data=data)
+
+        if(serializer.is_valid()):
+
+            serializer.save()
+
+            return Response(serializer.data)
+
+        else:
+
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+
+        alimento.delete()
+
+        return Response(status=status.HTTP_204_NOT_CONTENT)
