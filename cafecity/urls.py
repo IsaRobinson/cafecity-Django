@@ -22,5 +22,6 @@ urlpatterns = [
     path('',include('cafeteria.urls')),
     path('api/',include('rest_cafeteria.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('api-token-auth/',views.obtain_auth_token,name='api-token-auth')
+    path('account/',include('allauth.urls')),
+    path('api-token-auth/',views.obtain_auth_token,name='api-token-auth'),
 ]
