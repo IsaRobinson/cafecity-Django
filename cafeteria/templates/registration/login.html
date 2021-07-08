@@ -1,0 +1,58 @@
+{% load static%} {% load socialaccount %} {% providers_media_js %} {% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    {% load crispy_forms_tags %}
+    <div class="container">
+
+        <div class="row">
+            <di class="col-12 col-md-6 offset-md-3">
+
+
+                <div class="card algo">
+                    <div class="card-body ">
+                        <h2>Iniciar Sesión</h2>
+                        <hr>
+                        <form action="" method="POST">
+                            {% csrf_token %} {{ form | crispy }}
+
+                            <input type="submit" value="ingresar" class="btn btn-success float-right">
+                            <hr>
+                            <a href="{% provider_login_url 'google' %}"><img class="google" src="{% static 'cafeteria/img/google.png' %}" style="width: 30px; height: 30px;" alt="Ingresa con google"></a>
+
+                        </form>
+                    </div>
+                </div>
+
+            </di>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<style>
+    .algo {
+        margin-top: 200px;
+        background-color: #F2E3D5;
+        border-radius: 10px;
+    }
+    
+    body {
+        background-color: #592C12;
+    }
+</style>

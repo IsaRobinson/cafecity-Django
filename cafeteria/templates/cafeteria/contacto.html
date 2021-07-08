@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contacto</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -33,6 +33,20 @@
                     <a href="{% url 'nosotros' %}">Nosotros</a></li>
                 <li>
                     <a id="active" href="{% url 'contacto' %}">Contacto</a></li>
+
+                {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'logout' %}">Cerrar sesion</a>
+
+                </li>
+                <li>
+                    <a href="#">@{{ user.username }}</a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Iniciar sesion</a>
+                </li>
+                {% endif %}
             </ul>
 
             <div class="burger">
@@ -70,7 +84,8 @@
                     <br>
                     <br>
                     <br>
-                    <br>
+                    <br> {% if request.user.is_authenticated and user.username == "admin" %}
+
                     <div style="text-align: right; margin:0 250px 3vh 0;">
                         <button onclick="" type="submit" style="transition: 0.3s ease;background: #F2E3D5;color: #592C12;border-radius: 10px; height: 40px;font-weight: bolder; width: 200px;">
                             <a style="color: #592C12;" href="{% url 'administrador' %}">Administrar</a></button>
@@ -80,6 +95,8 @@
                         <button onclick="" type="submit" style="transition: 0.3s ease;background: #F2E3D5;color: #592C12;border-radius: 10px; height: 40px;font-weight: bolder; width: 200px;">
                         <a style="color: #592C12;" href="{% url 'lista_alimentos' %}">API</a></button>
                     </div>
+
+                    {% endif %}
 
                 </div>
             </div>
@@ -156,9 +173,36 @@
                 </div>
 
             </form>
-
-
         </section>
+        <br>
+        <br>
+        <section>
+            <div>
+                <h1 style="color: #592C12;">API</h1>
+                <br>
+                <div><button type="button" id="buscar" style="transition: 0.3s ease;background: #592C12;color: #F2E3D5 ;border-radius: 10px; height: 40px;font-weight: bolder; width: 200px;margin-left: 150px;">Listar productos</button></div>
+                <div class="row">
+                    <table class="table" id="alimentos">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+        </section>
+        <br>
+    </section>
+
+    </section>
     </section>
     <section class="footer">
         <div class="iconos-footer">
@@ -198,6 +242,25 @@
     <!-- Script Menu -->
     <script src="{% static 'cafeteria/js/animacionMenu.js' %}"></script>
 
+    <script>
+        $("#buscar").click(function() {
+            $.getJSON('http://127.0.0.1:8000/api/lista_alimentos', function(data) {
+
+                var alimento = data;
+
+                $.each(alimento, function(i, item) {
+                    $('#alimentos').append("<tr><td>" + item.nombre + "</td><td>" +
+                        item.precio + "</td><td>" + item.descripcion + "</td></tr>");
+
+                });
+
+
+            }).fail(function() {
+                console.log('Error al consumir la API!');
+            });
+
+        });
+    </script>
 
 
 </body>
